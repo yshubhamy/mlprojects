@@ -75,7 +75,7 @@ class ModelTrainer:
                 },
                 "Linear Regression":{},
 
-                "XGBRegressor":{
+                "XGB Regressor":{
                     'learning_rate':[.1,.01,.05,.001],
                     'n_estimators': [8,16,32,64,128,256]
                 },
@@ -94,7 +94,7 @@ class ModelTrainer:
             logging.info("Created Hyperparameter for each model")
 
             model_report: dict = evaluate_model(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
-                                             models=models,params=params)           
+                                             models=models,param=params)           
 
             logging.info("Model Report")
             best_model_score = max(sorted(model_report.values()))
